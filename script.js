@@ -40,3 +40,12 @@ jobs.forEach(job => {
 
   jobContainer.appendChild(card);
 });
+document.addEventListener("click", e => {
+  if (e.target.tagName === "BUTTON" && e.target.textContent === "Apply Now") {
+    document.getElementById("applyForm").style.display = "flex";
+  }
+});
+
+function closeForm() {
+  document.getElementById("applyForm").style.display = "none";
+}
