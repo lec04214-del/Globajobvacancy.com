@@ -1,146 +1,107 @@
-/* Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-/* Page background */
+/* BODY */
 body {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #ffffff;
   min-height: 100vh;
+}
+
+/* HEADER */
+header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 8%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
 }
 
-/* Main container */
-.container {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 14px;
-  width: 90%;
-  max-width: 600px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  text-align: center;
+header h1 {
+  font-size: 26px;
+  font-weight: 700;
 }
 
-/* Headings */
-h1 {
-  font-size: 2.4rem;
-  margin-bottom: 15px;
-  color: #ffffff;
+header p {
+  font-size: 14px;
+  opacity: 0.85;
 }
 
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #e0e0e0;
-  margin-bottom: 25px;
-}
-
-/* Button */
-.button {
-  display: inline-block;
-  padding: 14px 30px;
-  background: #00c6ff;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+nav a {
   color: #ffffff;
   text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-left: 20px;
+  font-weight: 500;
 }
 
-.button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.6);
-}
-.header {
-  text-align: center;
-  margin-bottom: 30px;
+nav a:hover {
+  color: #00c6ff;
 }
 
+/* MAIN CONTENT */
+main {
+  padding: 60px 8%;
+}
+
+/* JOB SECTION */
 .jobs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 90%;
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
+/* JOB CARD */
 .job-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .job-card h3 {
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 .job-card p {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 6px;
 }
 
+/* BUTTON */
 .job-card button {
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
+  margin-top: 15px;
+  padding: 10px 15px;
   border: none;
   border-radius: 8px;
-  background: #0072ff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: white;
-  font-weight: bold;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
 }
 
-/* Navbar */
-.navbar {
-  background: #0d1b2a;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
+.job-card button:hover {
+  opacity: 0.9;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links li a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .jobs {
-    padding: 20px;
-  }
-
-  .job-card {
-    width: 100%;
-  }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+  font-size: 13px;
 }
