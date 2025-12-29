@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <title>GlobaJob Vacancy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- FONT AWESOME FOR SOCIAL ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+
 <!-- MOBILE MENU BUTTON -->
-<button class="menu-btn" onclick="toggleSidebar()">⋮</button>
-  <div class="wrapper">
+<button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<div class="wrapper">
+
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <h2>GlobaJob</h2>
@@ -26,103 +34,137 @@
   </nav>
 
   <div class="socials">
-    <a href="#" title="Facebook">🌐</a>
-    <a href="#" title="Twitter">🐦</a>
-    <a href="#" title="LinkedIn">💼</a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </aside>
 
 <!-- MAIN CONTENT -->
-  <main>
+<main>
 
-  <!-- DASHBOARD HEADER -->
-  <section class="dashboard-header">
-    <h1>Dashboard</h1>
-    <p>Welcome to GlobaJob Vacancy – manage jobs and applications globally.</p>
-  </section>
+<!-- HEADER -->
+<section class="dashboard-header">
+  <h1>Global Jobs Without Borders</h1>
+  <p>Find verified job opportunities across countries and industries.</p>
+</section>
 
-  <!-- STATS CARDS -->
-  <section class="stats">
-    <div class="stat-card">
-      <h3>120+</h3>
-      <p>Active Jobs</p>
+<!-- STATS -->
+<section class="stats">
+  <div class="stat-card"><h3>120+</h3><p>Active Jobs</p></div>
+  <div class="stat-card"><h3>540+</h3><p>Applications</p></div>
+  <div class="stat-card"><h3>75+</h3><p>Companies</p></div>
+  <div class="stat-card"><h3>30+</h3><p>Countries</p></div>
+</section>
+
+<!-- GLOBAL FLIGHT IMAGE -->
+<section class="global-section">
+  <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde" alt="Flight">
+  <h2>Work Anywhere in the World</h2>
+  <p>Apply for international jobs and remote roles with relocation support.</p>
+</section>
+
+<!-- DEPARTMENTS -->
+<section class="team-section">
+  <h2>Departments Hiring Now</h2>
+
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="">
+      <h3>Engineering</h3>
+      <p>Backend, Frontend, DevOps & Software Engineers worldwide.</p>
     </div>
 
-    <div class="stat-card">
-      <h3>540+</h3>
-      <p>Applications</p>
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="">
+      <h3>Design</h3>
+      <p>UI/UX designers creating user-friendly digital experiences.</p>
     </div>
 
-    <div class="stat-card">
-      <h3>75+</h3>
-      <p>Companies</p>
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="">
+      <h3>Marketing</h3>
+      <p>Digital marketers, content creators & growth specialists.</p>
     </div>
 
-    <div class="stat-card">
-      <h3>30+</h3>
-      <p>Countries</p>
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" alt="">
+      <h3>Customer Support</h3>
+      <p>Support agents helping global customers succeed.</p>
     </div>
-  </section>
 
-  <!-- JOB LIST TABLE -->
-  <section class="dashboard-section">
-    <h2>Latest Job Listings</h2>
+  </div>
+</section>
 
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Job Title</th>
-            <th>Location</th>
-            <th>Type</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Backend Developer</td>
-            <td>Nigeria</td>
-            <td>Contract</td>
-            <td><span class="status open">Open</span></td>
-          </tr>
+<!-- EMAIL SUBSCRIPTION -->
+<section class="newsletter">
+  <h2>Get Job Alerts by Email</h2>
+  <p>Receive the latest jobs directly in your inbox.</p>
 
-          <tr>
-            <td>Frontend Engineer</td>
-            <td>Remote</td>
-            <td>Full-time</td>
-            <td><span class="status open">Open</span></td>
-          </tr>
+  <form>
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
 
-          <tr>
-            <td>UI/UX Designer</td>
-            <td>Canada</td>
-            <td>Part-time</td>
-            <td><span class="status closed">Closed</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+<!-- JOB TABLE -->
+<section class="dashboard-section">
+  <h2>Latest Job Listings</h2>
 
-  </main>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Job Title</th>
+          <th>Location</th>
+          <th>Type</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Backend Developer</td>
+          <td>Nigeria</td>
+          <td>Contract</td>
+          <td><span class="status open">Open</span></td>
+        </tr>
+        <tr>
+          <td>Frontend Engineer</td>
+          <td>Remote</td>
+          <td>Full-time</td>
+          <td><span class="status open">Open</span></td>
+        </tr>
+        <tr>
+          <td>UI/UX Designer</td>
+          <td>Canada</td>
+          <td>Part-time</td>
+          <td><span class="status closed">Closed</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</main>
+</div>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2025 GlobaJob Vacancy. All rights reserved.</p>
 
   <div class="footer-socials">
-    <a href="#">Facebook</a>
-    <a href="#">Twitter</a>
-    <a href="#">LinkedIn</a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </footer>
+
 <script>
-  function toggleSidebar() {
-    document.querySelector(".sidebar").classList.toggle("open");
-  }
 function toggleSidebar() {
-  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector(".sidebar").classList.toggle("open");
 }
 </script>
+
 </body>
 </html>
