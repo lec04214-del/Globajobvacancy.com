@@ -128,4 +128,35 @@ footer {
   .job-card {
     padding: 20px;
   }
+}/* APPLY FORM */
+.apply-form {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-box {
+  background: #0f2027;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.apply-box input,
+.apply-box button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.apply-box button {
+  background: #00c6ff;
+  color: #000;
+  font-weight: bold;
 }
