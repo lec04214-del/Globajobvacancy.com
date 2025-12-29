@@ -36,14 +36,18 @@
 <footer>
   © 2025 GlobaJob Vacancy. All rights reserved.
 </footer>
-<div class="apply-form" id="applyForm">
-  <div class="apply-box">
-    <h3>Apply for Job</h3>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <button onclick="closeForm()">Submit</button>
-  </div>
-</div>
-<script src="script.js"></script>
+<form action="https://formspree.io/f/xbdjqeoo" method="POST" class="apply-form">
+  <h3>Apply for this Job</h3>
+
+  <input type="text" name="name" placeholder="Your Full Name" required>
+
+  <input type="email" name="email" placeholder="Your Email Address" required>
+
+  <input type="text" name="job" placeholder="Job Title" required>
+
+  <textarea name="message" placeholder="Why should we hire you?" rows="4"></textarea>
+
+  <button type="submit">Submit Application</button>
+</form>
   </body>
 </html>
