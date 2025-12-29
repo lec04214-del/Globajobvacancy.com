@@ -8,9 +8,8 @@
 </head>
 
 <body>
-  <!-- MOBILE MENU BUTTON -->
+<!-- MOBILE MENU BUTTON -->
 <button class="menu-btn" onclick="toggleSidebar()">⋮</button>
-
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <h2>GlobaJob</h2>
@@ -33,60 +32,78 @@
 </aside>
 
 <!-- MAIN CONTENT -->
-<main>
+  <main>
 
-  <!-- HEADER -->
-  <header class="main-header">
-    <h1>Find Jobs Anywhere in the World 🌍</h1>
-    <p>
-      GlobaJob Vacancy connects job seekers with real employment opportunities
-      across Africa, Europe, Asia, and the Americas. Whether you are a graduate,
-      freelancer, or experienced professional, our platform helps you discover
-      jobs that match your skills and apply easily from anywhere.
-    </p>
-  </header>
-
-  <!-- ABOUT / VALUE SECTION -->
-  <section class="about-site">
-    <h2>How GlobaJob Helps Job Seekers</h2>
-    <p>
-      GlobaJob Vacancy was created to reduce unemployment by making job
-      opportunities accessible to everyone, regardless of location. We provide
-      verified job listings, simple application processes, and direct employer
-      connections.
-    </p>
-    <p>
-      With GlobaJob, applicants can explore global roles, submit applications
-      online, and receive responses directly via email — removing barriers and
-      opening doors to international careers.
-    </p>
+  <!-- DASHBOARD HEADER -->
+  <section class="dashboard-header">
+    <h1>Dashboard</h1>
+    <p>Welcome to GlobaJob Vacancy – manage jobs and applications globally.</p>
   </section>
 
-  <!-- JOB CARD -->
-  <section class="job-card">
-    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="Backend Job">
-    <h3>Backend Developer</h3>
-    <p><strong>Location:</strong> Nigeria</p>
-    <p><strong>Type:</strong> Contract</p>
+  <!-- STATS CARDS -->
+  <section class="stats">
+    <div class="stat-card">
+      <h3>120+</h3>
+      <p>Active Jobs</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>540+</h3>
+      <p>Applications</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>75+</h3>
+      <p>Companies</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>30+</h3>
+      <p>Countries</p>
+    </div>
   </section>
 
-  <!-- APPLICATION FORM -->
-  <form action="https://formspree.io/f/xbdjqeoo" method="POST" class="apply-form">
+  <!-- JOB LIST TABLE -->
+  <section class="dashboard-section">
+    <h2>Latest Job Listings</h2>
 
-    <input type="hidden" name="_subject" value="New Job Application">
-    <input type="hidden" name="_template" value="table">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Backend Developer</td>
+            <td>Nigeria</td>
+            <td>Contract</td>
+            <td><span class="status open">Open</span></td>
+          </tr>
 
-    <h3>Apply for this Job</h3>
+          <tr>
+            <td>Frontend Engineer</td>
+            <td>Remote</td>
+            <td>Full-time</td>
+            <td><span class="status open">Open</span></td>
+          </tr>
 
-    <input type="text" name="name" placeholder="Your Full Name" required>
-    <input type="email" name="email" placeholder="Your Email Address" required>
-    <input type="text" name="job" placeholder="Job Title" required>
-    <textarea name="message" placeholder="Why should we hire you?" rows="4"></textarea>
+          <tr>
+            <td>UI/UX Designer</td>
+            <td>Canada</td>
+            <td>Part-time</td>
+            <td><span class="status closed">Closed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <button type="submit">Submit Application</button>
-  </form>
-
-</main>
+  </main>
 
 <!-- FOOTER -->
 <footer>
@@ -98,10 +115,10 @@
     <a href="#">LinkedIn</a>
   </div>
 </footer>
- <script>
+<script>
   function toggleSidebar() {
     document.querySelector(".sidebar").classList.toggle("open");
   }
- </script>
+</script>
 </body>
 </html>
