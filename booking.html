@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Booking Form | Global Job Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="booking.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<section class="booking-section">
+  <div class="booking-container">
+
+    <h1>Job Booking Form</h1>
+    <p>Book yourself for potential job opportunities available globally.</p>
+
+    <form action="#" method="post" class="booking-form">
+
+      <!-- PERSONAL DETAILS -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter full name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+234 000 000 0000" required>
+        </div>
+
+        <div class="form-group">
+          <label>Nationality</label>
+          <input type="text" placeholder="Your nationality" required>
+        </div>
+      </fieldset>
+
+      <!-- JOB PREFERENCE -->
+      <fieldset>
+        <legend>Job Preference</legend>
+
+        <div class="form-group">
+          <label>Preferred Job Category</label>
+          <select required>
+            <option value="">-- Select Job Category --</option>
+            <option>Construction</option>
+            <option>Healthcare</option>
+            <option>Hotel & Hospitality</option>
+            <option>Security</option>
+            <option>Factory / Manufacturing</option>
+            <option>IT / Technology</option>
+            <option>Logistics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Country</label>
+          <select required>
+            <option value="">-- Select Country --</option>
+            <option>Canada</option>
+            <option>United Kingdom</option>
+            <option>Germany</option>
+            <option>Saudi Arabia</option>
+            <option>United Arab Emirates</option>
+            <option>Qatar</option>
+            <option>Australia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Availability Date</label>
+          <input type="date" required>
+        </div>
+      </fieldset>
+
+      <!-- EXPERIENCE -->
+      <fieldset>
+        <legend>Experience Details</legend>
+
+        <div class="form-group">
+          <label>Years of Experience</label>
+          <select required>
+            <option value="">-- Select --</option>
+            <option>0 - 1 Year</option>
+            <option>2 - 5 Years</option>
+            <option>6 - 10 Years</option>
+            <option>10+ Years</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Additional Information</label>
+          <textarea rows="4" placeholder="Briefly describe your skills or experience"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- SUBMIT -->
+      <button type="submit">
+        <i class="fa-solid fa-paper-plane"></i> Book Job Opportunity
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+</body>
+</html>
