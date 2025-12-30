@@ -1,5 +1,5 @@
 /* ======================
-   RESET & GLOBAL STYLES
+   RESET & GLOBAL
 ====================== */
 * {
   margin: 0;
@@ -11,7 +11,6 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f4f6f9;
   color: #333;
-  line-height: 1.6;
 }
 
 img {
@@ -26,44 +25,37 @@ a {
 }
 
 /* ======================
-   MOBILE MENU BUTTON
+   MENU BUTTON
 ====================== */
 .menu-btn {
   position: fixed;
   top: 15px;
   left: 15px;
-  font-size: 22px;
+  font-size: 26px;
   padding: 10px 14px;
   border: none;
   background: #1e3a8a;
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
-  z-index: 2000;
+  z-index: 3000;
   display: none;
-}
-
-/* ======================
-   LAYOUT
-====================== */
-.wrapper {
-  display: flex;
-  min-height: 100vh;
 }
 
 /* ======================
    SIDEBAR
 ====================== */
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 260px;
+  height: 100%;
   background: #0f172a;
   color: #fff;
   padding: 25px 20px;
-  position: fixed;
-  height: 100%;
-  left: 0;
-  top: 0;
   transition: transform 0.3s ease;
+  z-index: 2000;
 }
 
 .sidebar h2 {
@@ -82,7 +74,6 @@ a {
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 8px;
-  transition: background 0.3s;
 }
 
 .sidebar nav a:hover {
@@ -101,12 +92,21 @@ a {
   background: #1e293b;
   padding: 10px;
   border-radius: 50%;
-  transition: background 0.3s;
 }
 
-.socials a:hover {
-  background: #38bdf8;
-  color: #000;
+/* ======================
+   OVERLAY
+====================== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1500;
+}
+
+.overlay.active {
+  display: block;
 }
 
 /* ======================
@@ -115,11 +115,18 @@ a {
 main {
   margin-left: 260px;
   padding: 30px;
-  width: 100%;
+}
+
+footer {
+  margin-left: 260px;
+  background: #0f172a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
 /* ======================
-   HEADER
+   SECTIONS
 ====================== */
 .dashboard-header {
   background: linear-gradient(135deg, #1e3a8a, #2563eb);
@@ -129,14 +136,6 @@ main {
   margin-bottom: 30px;
 }
 
-.dashboard-header h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-/* ======================
-   STATS CARDS
-====================== */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -149,239 +148,37 @@ main {
   padding: 25px;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.stat-card h3 {
-  font-size: 28px;
-  color: #2563eb;
-}
-
-/* ======================
-   GLOBAL SECTION
-====================== */
-.global-section {
+.global-section,
+.team-card,
+.newsletter,
+.table-wrapper {
   background: #fff;
   padding: 30px;
   border-radius: 16px;
   margin-bottom: 40px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.global-section img {
-  max-height: 300px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-.global-section h2 {
-  color: #1e3a8a;
-  margin-bottom: 10px;
 }
 
 /* ======================
-   TEAM / DEPARTMENTS
-====================== */
-.team-section {
-  margin-bottom: 40px;
-}
-
-.team-section h2 {
-  margin-bottom: 20px;
-  color: #1e3a8a;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
-}
-
-.team-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.team-card h3 {
-  margin: 15px 0 8px;
-  color: #2563eb;
-}
-
-/* ======================
-   NEWSLETTER
-====================== */
-.newsletter {
-  background: #1e3a8a;
-  color: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.newsletter form {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.newsletter input {
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  width: 260px;
-}
-
-.newsletter button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #38bdf8;
-  color: #000;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* ======================
-   JOB TABLE
-====================== */
-.dashboard-section h2 {
-  margin-bottom: 15px;
-  color: #1e3a8a;
-}
-
-.table-wrapper {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 14px;
-  text-align: left;
-}
-
-th {
-  background: #1e3a8a;
-  color: #fff;
-}
-
-tr:nth-child(even) {
-  background: #f1f5f9;
-}
-
-.status {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-.status.open {
-  background: #bbf7d0;
-  color: #065f46;
-}
-
-.status.closed {
-  background: #fecaca;
-  color: #7f1d1d;
-}
-
-/* ======================
-   FOOTER
-====================== */
-footer {
-  margin-left: 260px;
-  background: #0f172a;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-.footer-socials {
-  margin-top: 10px;
-}
-
-.footer-socials a {
-  margin: 0 10px;
-  font-size: 18px;
-}
-
-/* ======================
-   RESPONSIVE
+   MOBILE
 ====================== */
 @media (max-width: 900px) {
+
   .menu-btn {
     display: block;
   }
 
   .sidebar {
     transform: translateX(-100%);
-    z-index: 1500;
   }
 
-  .sidebar.open {
+  .sidebar.active {
     transform: translateX(0);
   }
 
-  main, footer {
+  main,
+  footer {
     margin-left: 0;
   }
-}
-
-/* Menu button */
-.menu-btn {
-  font-size: 26px;
-  background: #1e3a8a;
-  color: #fff;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 6px;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1100;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #0f172a;
-  color: #fff;
-  padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 1001;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  display: none;
-  z-index: 1000;
-}
-
-.overlay.active {
-  display: block;
 }
