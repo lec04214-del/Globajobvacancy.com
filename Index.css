@@ -1,23 +1,32 @@
 /* ======================
-   RESET & BASE
+   GLOBAL RESET
 ====================== */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Segoe UI", system-ui, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.7;
+}
+
+/* ======================
+   GLOBAL ELEMENTS
+====================== */
 img {
   width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 a {
@@ -25,69 +34,112 @@ a {
   color: inherit;
 }
 
-/* ======================
-   MENU BUTTON
-====================== */
-.menu-btn {
-  position: fixed;
-  top: 16px;
-  left: 16px;
-  font-size: 26px;
-  padding: 10px 14px;
-  border: none;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  z-index: 3000;
-  display: none;
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+button {
+  font-family: inherit;
 }
 
 /* ======================
-   SIDEBAR
+   MENU BUTTON (MOBILE)
+====================== */
+.menu-btn {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  font-size: 26px;
+  padding: 12px 16px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 4000;
+  display: none;
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+}
+
+/* ======================
+   SIDEBAR (SCROLLABLE)
 ====================== */
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0;
-  width: 260px;
-  background: linear-gradient(180deg, #0f172a, #020617);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 270px;
+  background: linear-gradient(180deg, #020617, #0f172a);
   color: #e5e7eb;
-  padding: 25px 20px;
-  transition: transform 0.3s ease;
-  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 18px;
+  overflow-y: auto; /* 🔥 SCROLL DOWN ENABLED */
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb transparent;
+  transition: transform 0.35s ease;
+  z-index: 3000;
+}
+
+/* Custom scrollbar (Chrome) */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  position: sticky;
+  top: 0;
+  background: inherit;
+  padding-bottom: 15px;
+  z-index: 10;
 }
 
 .sidebar h2 {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
   color: #38bdf8;
 }
 
+/* Sidebar Image */
 .sidebar-img {
   margin-bottom: 20px;
+}
+
+/* Sidebar Navigation */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .sidebar nav a {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  margin-bottom: 8px;
-  transition: background 0.2s ease, transform 0.2s ease;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
 }
 
 .sidebar nav a:hover {
   background: #1e293b;
-  transform: translateX(5px);
+  transform: translateX(6px);
+  color: #38bdf8;
 }
 
+/* ======================
+   SOCIAL ICONS
+====================== */
 .socials {
+  margin-top: auto;
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 30px;
+  padding-top: 30px;
 }
 
 .socials a {
@@ -95,12 +147,12 @@ a {
   background: #1e293b;
   padding: 12px;
   border-radius: 50%;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .socials a:hover {
   background: #2563eb;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 /* ======================
@@ -109,29 +161,37 @@ a {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.6);
-  display: none;
-  z-index: 1500;
+  background: rgba(2, 6, 23, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 2500;
 }
 
 .overlay.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ======================
-   MAIN LAYOUT
+   MAIN CONTENT
 ====================== */
 main {
-  margin-left: 260px;
-  padding: 35px;
+  margin-left: 270px;
+  padding: 40px;
+  min-height: 100vh;
 }
 
+/* ======================
+   FOOTER
+====================== */
 footer {
-  margin-left: 260px;
+  margin-left: 270px;
   background: #020617;
   color: #cbd5f5;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
+  font-size: 0.9rem;
 }
 
 /* ======================
@@ -140,43 +200,43 @@ footer {
 .dashboard-header {
   background: linear-gradient(135deg, #2563eb, #38bdf8);
   color: #fff;
-  padding: 50px;
-  border-radius: 24px;
-  margin-bottom: 40px;
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+  padding: 55px;
+  border-radius: 28px;
+  margin-bottom: 50px;
+  box-shadow: 0 25px 55px rgba(37, 99, 235, 0.35);
 }
 
 .dashboard-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
 }
 
 /* ======================
-   STATS
+   STATS CARDS
 ====================== */
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .stat-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 20px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
 }
 
 .stat-card h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #2563eb;
 }
 
@@ -184,45 +244,41 @@ footer {
    GLOBAL SECTION
 ====================== */
 .global-section {
-  background: #fff;
-  padding: 40px;
-  border-radius: 24px;
-  margin-bottom: 50px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 28px;
+  margin-bottom: 60px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
 }
 
 .global-section h2 {
-  margin: 20px 0 10px;
+  margin-bottom: 15px;
 }
 
 /* ======================
    TEAM SECTION
 ====================== */
-.team-section h2 {
-  margin-bottom: 25px;
-}
-
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
 }
 
 .team-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 20px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
 }
 
 .team-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
 }
 
 .team-card h3 {
-  margin-top: 15px;
+  margin-top: 18px;
   color: #2563eb;
 }
 
@@ -230,39 +286,39 @@ footer {
    NEWSLETTER
 ====================== */
 .newsletter {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, #020617, #1e293b);
   color: #fff;
-  padding: 45px;
-  border-radius: 24px;
+  padding: 55px;
+  border-radius: 28px;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .newsletter form {
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 16px;
   justify-content: center;
 }
 
 .newsletter input {
-  padding: 14px 18px;
-  border-radius: 12px;
+  padding: 16px 20px;
+  border-radius: 14px;
   border: none;
-  min-width: 260px;
+  min-width: 280px;
   outline: none;
 }
 
 .newsletter button {
-  padding: 14px 22px;
-  border-radius: 12px;
+  padding: 16px 26px;
+  border-radius: 14px;
   border: none;
   background: #38bdf8;
   color: #020617;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .newsletter button:hover {
@@ -270,7 +326,7 @@ footer {
 }
 
 /* ======================
-   MOBILE
+   MOBILE RESPONSIVE
 ====================== */
 @media (max-width: 900px) {
   .menu-btn {
@@ -288,5 +344,6 @@ footer {
   main,
   footer {
     margin-left: 0;
+    padding: 30px 20px;
   }
 }
