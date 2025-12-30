@@ -8,37 +8,23 @@
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- FONT AWESOME FOR SOCIAL ICONS -->
+  <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-<!-- Menu Button -->
+
+<!-- MENU BUTTON -->
 <button id="menuBtn" class="menu-btn">☰</button>
 
-<!-- Overlay -->
+<!-- OVERLAY -->
 <div id="overlay" class="overlay"></div>
 
-<!-- Sidebar -->
-<aside id="sidebar" class="sidebar">
-  <ul>
-    <li>Home</li>
-    <li>Jobs</li>
-    <li>Apply</li>
-    <li>About</li>
-    <li>Contact</li>
-  </ul>
-</aside>
-<!-- MOBILE MENU BUTTON -->
-<button class="menu-btn" onclick="toggleSidebar()">☰</button>
-
-<div class="wrapper">
-
 <!-- SIDEBAR -->
-<aside class="sidebar">
+<aside id="sidebar" class="sidebar">
   <h2>GlobaJob</h2>
 
-  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Jobs" class="sidebar-img">
+  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" class="sidebar-img" alt="Jobs">
 
   <nav>
     <a href="#">🏠 Home</a>
@@ -58,13 +44,11 @@
 <!-- MAIN CONTENT -->
 <main>
 
-<!-- HEADER -->
 <section class="dashboard-header">
   <h1>Global Jobs Without Borders</h1>
   <p>Find verified job opportunities across countries and industries.</p>
 </section>
 
-<!-- STATS -->
 <section class="stats">
   <div class="stat-card"><h3>120+</h3><p>Active Jobs</p></div>
   <div class="stat-card"><h3>540+</h3><p>Applications</p></div>
@@ -72,135 +56,77 @@
   <div class="stat-card"><h3>30+</h3><p>Countries</p></div>
 </section>
 
-<!-- GLOBAL FLIGHT IMAGE -->
 <section class="global-section">
   <img src="https://raw.githubusercontent.com/lec04214-del/Globajobvacancy.com/main/images/istockphoto-470865674-612x612.jpg" alt="Airport scene">
   <h2>Work Anywhere in the World</h2>
   <p>Apply for international jobs and remote roles with relocation support.</p>
 </section>
 
-<!-- DEPARTMENTS -->
 <section class="team-section">
   <h2>Departments Hiring Now</h2>
 
   <div class="team-grid">
-
     <div class="team-card">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
       <h3>Engineering</h3>
-      <p>Backend, Frontend, DevOps & Software Engineers worldwide.</p>
+      <p>Backend, Frontend, DevOps & Software Engineers.</p>
     </div>
 
     <div class="team-card">
-      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="">
+      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
       <h3>Design</h3>
-      <p>UI/UX designers creating user-friendly digital experiences.</p>
+      <p>UI/UX designers creating user-friendly experiences.</p>
     </div>
 
     <div class="team-card">
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf">
       <h3>Marketing</h3>
-      <p>Digital marketers, content creators & growth specialists.</p>
+      <p>Digital marketers & growth specialists.</p>
     </div>
 
     <div class="team-card">
-      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" alt="">
+      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70">
       <h3>Customer Support</h3>
-      <p>Support agents helping global customers succeed.</p>
+      <p>Support agents helping global customers.</p>
     </div>
-
   </div>
 </section>
 
-<!-- EMAIL SUBSCRIPTION -->
 <section class="newsletter">
   <h2>Get Job Alerts by Email</h2>
-  <p>Receive the latest jobs directly in your inbox.</p>
-
   <form>
     <input type="email" placeholder="Enter your email" required>
     <button type="submit">Subscribe</button>
   </form>
 </section>
 
-<!-- JOB TABLE -->
-<section class="dashboard-section">
-  <h2>Latest Job Listings</h2>
-
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>Job Title</th>
-          <th>Location</th>
-          <th>Type</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Backend Developer</td>
-          <td>Nigeria</td>
-          <td>Contract</td>
-          <td><span class="status open">Open</span></td>
-        </tr>
-        <tr>
-          <td>Frontend Engineer</td>
-          <td>Remote</td>
-          <td>Full-time</td>
-          <td><span class="status open">Open</span></td>
-        </tr>
-        <tr>
-          <td>UI/UX Designer</td>
-          <td>Canada</td>
-          <td>Part-time</td>
-          <td><span class="status closed">Closed</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
 </main>
-</div>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2025 GlobaJob Vacancy. All rights reserved.</p>
-
-  <div class="footer-socials">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-x-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-  </div>
 </footer>
 
+<!-- SCRIPT -->
 <script>
-function toggleSidebar() {
-  document.querySelector(".sidebar").classList.toggle("open");
-}
   const menuBtn = document.getElementById("menuBtn");
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("overlay");
 
-  function openSidebar() {
+  menuBtn.addEventListener("click", () => {
     sidebar.classList.add("active");
     overlay.classList.add("active");
-    history.pushState({ sidebarOpen: true }, "");
-  }
+    history.pushState({ sidebar: true }, "");
+  });
 
-  function closeSidebar() {
+  overlay.addEventListener("click", () => {
     sidebar.classList.remove("active");
     overlay.classList.remove("active");
-  }
-
-  menuBtn.addEventListener("click", openSidebar);
-  overlay.addEventListener("click", closeSidebar);
-
-  window.addEventListener("popstate", function () {
-    closeSidebar();
   });
-  
+
+  window.addEventListener("popstate", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 </script>
 
 </body>
