@@ -1,0 +1,135 @@
+/* RESET & GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.top-header {
+  background: linear-gradient(90deg, #0b5ed7, #084298);
+  color: #fff;
+  padding: 20px;
+}
+
+.top-header h1 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.top-header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 18px;
+  font-weight: 500;
+}
+
+.top-header nav a:hover,
+.top-header nav a.active {
+  text-decoration: underline;
+}
+
+/* ABOUT SECTIONS */
+.about-section,
+.about-purpose {
+  padding: 60px 20px;
+}
+
+.about-section {
+  background-color: #ffffff;
+}
+
+.about-purpose {
+  background-color: #eef2f7;
+}
+
+/* CONTENT CONTAINER */
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADINGS */
+.about-container h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #0b5ed7;
+  text-align: center;
+}
+
+.about-container h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #084298;
+}
+
+/* TEXT */
+.about-container p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+/* LISTS */
+.about-container ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.about-container li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* PURPOSE LIST STYLE */
+.about-purpose ul li {
+  background: #f8fafc;
+  padding: 12px 15px;
+  border-left: 4px solid #0b5ed7;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+.footer {
+  background: #222;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .top-header h1 {
+    font-size: 22px;
+  }
+
+  .top-header nav a {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .about-container {
+    padding: 25px;
+  }
+
+  .about-container h2 {
+    font-size: 26px;
+  }
+
+  .about-container h3 {
+    font-size: 20px;
+  }
+}
