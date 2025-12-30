@@ -13,7 +13,22 @@
 </head>
 
 <body>
+<!-- Menu Button -->
+<button id="menuBtn" class="menu-btn">☰</button>
 
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar">
+  <ul>
+    <li>Home</li>
+    <li>Jobs</li>
+    <li>Apply</li>
+    <li>About</li>
+    <li>Contact</li>
+  </ul>
+</aside>
 <!-- MOBILE MENU BUTTON -->
 <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
@@ -164,6 +179,28 @@
 function toggleSidebar() {
   document.querySelector(".sidebar").classList.toggle("open");
 }
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+
+  function openSidebar() {
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+    history.pushState({ sidebarOpen: true }, "");
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  }
+
+  menuBtn.addEventListener("click", openSidebar);
+  overlay.addEventListener("click", closeSidebar);
+
+  window.addEventListener("popstate", function () {
+    closeSidebar();
+  });
+  
 </script>
 
 </body>
