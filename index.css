@@ -55,6 +55,7 @@ ONLY STICKY HEADER
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 20px;
   padding: 16px 28px;
   border-bottom-left-radius: var(--radius-md);
@@ -96,7 +97,9 @@ SIDEBAR
 ====================== */
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 270px;
   background: linear-gradient(180deg, var(--dark), var(--dark-soft));
   color: #e5e7eb;
@@ -166,9 +169,15 @@ SIDEBAR
   transform: translateY(-3px);
 }
 
+/* ======================
+OVERLAY
+====================== */
 .overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(2, 6, 23, 0.65);
   opacity: 0;
   visibility: hidden;
@@ -211,10 +220,18 @@ DASHBOARD HEADER
   box-shadow: var(--shadow-md);
 }
 
+.dashboard-header h1 {
+  font-size: 2rem;
+}
+
+.dashboard-header p {
+  font-size: 1rem;
+}
+
 /* ======================
 STATS, TEAM, GLOBAL, NEWSLETTER
 ====================== */
-/* Keep your original CSS here */
+/* Keep your original CSS here for stats, team, global-section, newsletter */
 
 /* ======================
 MOBILE
@@ -246,4 +263,18 @@ MOBILE
   .site-header h1 {
     font-size: 1.4rem;
   }
+
+  /* Dashboard header smaller on mobile */
+  .dashboard-header {
+    padding: 20px 15px;
+    border-radius: var(--radius-md);
   }
+
+  .dashboard-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-header p {
+    font-size: 0.9rem;
+  }
+}
