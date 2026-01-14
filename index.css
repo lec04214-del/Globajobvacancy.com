@@ -1,5 +1,5 @@
 /* ======================
-   ROOT VARIABLES
+ROOT VARIABLES
 ====================== */
 :root {
   --primary: #2563eb;
@@ -19,7 +19,7 @@
 }
 
 /* ======================
-   RESET & BASE
+RESET & BASE
 ====================== */
 *,
 *::before,
@@ -42,27 +42,39 @@ body {
 
 section,
 [id] {
-  scroll-margin-top: 90px;
-}
-
-img {
-  width: 100%;
-  display: block;
-  border-radius: var(--radius-md);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
+  scroll-margin-top: 120px;
 }
 
 /* ======================
-   MENU BUTTON
+STICKY HEADER
+====================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  color: #fff;
+}
+
+.site-header h1 {
+  font-size: 1.6rem;
+}
+
+.site-header .logo {
+  width: 60px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ======================
+MENU BUTTON
 ====================== */
 .menu-btn {
   position: fixed;
@@ -80,7 +92,7 @@ button {
 }
 
 /* ======================
-   SIDEBAR
+SIDEBAR
 ====================== */
 .sidebar {
   position: fixed;
@@ -99,7 +111,6 @@ button {
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
-
 .sidebar::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 10px;
@@ -170,6 +181,9 @@ button {
   visibility: visible;
 }
 
+/* ======================
+MAIN LAYOUT
+====================== */
 main {
   margin-left: 270px;
   padding: 45px;
@@ -186,208 +200,63 @@ footer {
 }
 
 /* ======================
-   HERO DASHBOARD HEADER
+DASHBOARD HEADER
 ====================== */
 .dashboard-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2000;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: #fff;
-  padding: 25px 40px;
-  border-radius: 0; /* full width */
-  margin-bottom: 40px;
-  clip-path: ellipse(100% 70% at 50% 0%);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: padding 0.3s ease, box-shadow 0.3s ease, clip-path 0.3s ease;
-}
-
-.dashboard-header .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 55px;
+  box-shadow: 0 20px 40px rgba(37,99,235,0.25);
+  transition: all 0.35s ease;
 }
 
 .dashboard-header h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2rem;
 }
 
-.dashboard-header p {
-  font-size: 1rem;
-  color: #e0e7ff;
-  max-width: 500px;
-}
-
-.btn-apply {
-  margin-top: 15px;
-  display: inline-block;
-  padding: 12px 26px;
-  background: #fff;
-  color: var(--primary);
-  font-weight: 600;
+.dashboard-header.shrink {
+  padding: 20px 30px;
   border-radius: var(--radius-md);
-  transition: var(--transition);
+  box-shadow: 0 10px 20px rgba(37,99,235,0.2);
 }
 
-.btn-apply:hover {
-  background: #e0f2fe;
-}
-
-/* ======================
-   STATS
-====================== */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-.stat-card {
-  background: var(--card-bg);
-  padding: 36px;
-  border-radius: var(--radius-lg);
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-
-.stat-card:hover {
-  transform: translateY(-8px);
-}
-
-.stat-card h3 {
-  font-size: 2.2rem;
-  color: var(--primary);
-}
-
-.stat-card p {
-  font-size: 1rem;
-  color: var(--text-muted);
-}
-
-/* ======================
-   GLOBAL SECTION
-====================== */
-.global-section {
-  background: var(--card-bg);
-  padding: 40px;
-  border-radius: var(--radius-lg);
-  margin-bottom: 60px;
-  box-shadow: var(--shadow-md);
-  text-align: center;
-}
-
-.global-section h2 {
-  margin-bottom: 16px;
+.dashboard-header.shrink h1 {
   font-size: 1.6rem;
-  color: var(--primary);
-}
-
-.global-section p {
-  font-size: 1rem;
-  color: var(--text-muted);
 }
 
 /* ======================
-   TEAM SECTION
+STATS, TEAM, GLOBAL, NEWSLETTER
 ====================== */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-}
+/* Keep your original CSS here */
 
-.team-card {
-  background: var(--card-bg);
-  padding: 28px;
-  border-radius: var(--radius-lg);
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-
-.team-card:hover {
-  transform: translateY(-10px);
-}
-
-.team-card h3 {
-  margin-top: 18px;
-  color: var(--primary);
-}
-
-.team-card p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-/* ======================
-   NEWSLETTER
-====================== */
-.newsletter {
-  background: linear-gradient(135deg, var(--dark), #1e293b);
-  color: #fff;
-  padding: 60px;
-  border-radius: var(--radius-lg);
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.newsletter form {
-  margin-top: 26px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
-.newsletter input {
-  padding: 16px 22px;
-  border-radius: var(--radius-md);
-  border: none;
-  min-width: 280px;
-}
-
-.newsletter button {
-  padding: 16px 28px;
-  border-radius: var(--radius-md);
-  border: none;
-  background: var(--primary-light);
-  color: var(--dark);
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.newsletter button:hover {
-  background: #7dd3fc;
-}
-
-/* ======================
-   MOBILE
-====================== */
 @media (max-width: 900px) {
-  .menu-btn { display: block; }
-  .sidebar { transform: translateX(-100%); }
-  .sidebar.active { transform: translateX(0); }
-  main, footer { margin-left: 0; padding: 20px; }
-
-  .dashboard-header {
-    padding: 20px 15px;
-    clip-path: ellipse(100% 60% at 50% 0%);
+  .menu-btn {
+    display: block;
   }
 
-  .dashboard-header h1 { font-size: 2rem; }
-  .dashboard-header p { font-size: 0.95rem; }
+  .sidebar {
+    transform: translateX(-100%);
+  }
 
-  .sticky-header .header-content {
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  main,
+  footer {
+    margin-left: 0;
+    padding: 30px 22px;
+  }
+
+  .site-header {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
   }
 
-  .sticky-header .header-logo img { width: 100px; }
-}
+  .site-header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+                              }
