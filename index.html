@@ -11,10 +11,10 @@
 </head>
 <body>
 
-<!-- STICKY HEADER WITH LOGO -->
+<!-- ONLY ONE STICKY HEADER -->
 <header class="site-header">
-  <h1>Global Jobs Without Borders</h1>
   <img src="https://images.unsplash.com/photo-1603415526960-f92354c62a54" class="logo" alt="Company Logo">
+  <h1>Global Jobs Without Borders</h1>
 </header>
 
 <!-- MENU BUTTON -->
@@ -47,8 +47,8 @@
 <!-- MAIN CONTENT -->
 <main>
   <section class="dashboard-header">
-    <h1>Global Jobs Without Borders</h1>
-    <p>Find verified job opportunities across countries and industries.</p>
+    <h1>Find Verified Jobs Across Borders</h1>
+    <p>Apply for international jobs and remote roles with relocation support.</p>
   </section>
 
   <section class="stats">
@@ -123,16 +123,6 @@
   window.addEventListener("popstate", () => {
     sidebar.classList.remove("active");
     overlay.classList.remove("active");
-  });
-
-  // SHRINK DASHBOARD HEADER ON SCROLL
-  const dashboardHeader = document.querySelector('.dashboard-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      dashboardHeader.classList.add('shrink');
-    } else {
-      dashboardHeader.classList.remove('shrink');
-    }
   });
 </script>
 
