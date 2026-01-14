@@ -11,7 +11,7 @@
 <body>
 
   <!-- HEADER -->
-  <header class="main-header">
+  <header class="main-header" id="mainHeader">
     <div class="header-container">
       <div class="company-name">Global Job Agency</div>
 
@@ -23,7 +23,7 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT (OLD CODE KEPT) -->
   <section class="staff-section">
     <h1>Our Permanent Staff</h1>
     <p class="intro">
@@ -33,10 +33,8 @@
 
     <div class="staff-container">
 
-      <!-- Staff 1 -->
       <div class="staff-card">
-        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1"
-             alt="CEO Photo">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1" alt="CEO Photo">
         <h2>Mr. Daniel Okafor</h2>
         <h3>Founder & Chief Executive Officer (CEO)</h3>
         <p>
@@ -47,10 +45,8 @@
         </p>
       </div>
 
-      <!-- Staff 2 -->
       <div class="staff-card">
-        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6"
-             alt="HR Manager Photo">
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6" alt="HR Manager Photo">
         <h2>Mrs. Amina Bello</h2>
         <h3>Human Resources Manager</h3>
         <p>
@@ -60,10 +56,8 @@
         </p>
       </div>
 
-      <!-- Staff 3 -->
       <div class="staff-card">
-        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c"
-             alt="Operations Director Photo">
+        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c" alt="Operations Director Photo">
         <h2>Mr. Samuel Johnson</h2>
         <h3>Operations & Placement Director</h3>
         <p>
@@ -73,10 +67,8 @@
         </p>
       </div>
 
-      <!-- Staff 4 -->
       <div class="staff-card">
-        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956"
-             alt="Client Relations Manager Photo">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956" alt="Client Relations Manager Photo">
         <h2>Ms. Fatima Hassan</h2>
         <h3>Client Relations & Support Manager</h3>
         <p>
@@ -88,6 +80,19 @@
 
     </div>
   </section>
+
+  <!-- HEADER SHRINK SCRIPT -->
+  <script>
+    const header = document.getElementById("mainHeader");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 60) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+      }
+    });
+  </script>
 
 </body>
 </html>
