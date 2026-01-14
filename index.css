@@ -46,7 +46,7 @@ section,
 }
 
 /* ======================
-STICKY HEADER
+ONLY STICKY HEADER
 ====================== */
 .site-header {
   position: sticky;
@@ -55,7 +55,7 @@ STICKY HEADER
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
   padding: 16px 28px;
   border-bottom-left-radius: var(--radius-md);
   border-bottom-right-radius: var(--radius-md);
@@ -203,27 +203,12 @@ footer {
 DASHBOARD HEADER
 ====================== */
 .dashboard-header {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: #fff;
+  background: var(--card-bg);
+  color: var(--text-main);
   padding: 40px;
   border-radius: var(--radius-lg);
   margin-bottom: 55px;
-  box-shadow: 0 20px 40px rgba(37,99,235,0.25);
-  transition: all 0.35s ease;
-}
-
-.dashboard-header h1 {
-  font-size: 2rem;
-}
-
-.dashboard-header.shrink {
-  padding: 20px 30px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 20px rgba(37,99,235,0.2);
-}
-
-.dashboard-header.shrink h1 {
-  font-size: 1.6rem;
+  box-shadow: var(--shadow-md);
 }
 
 /* ======================
@@ -231,6 +216,9 @@ STATS, TEAM, GLOBAL, NEWSLETTER
 ====================== */
 /* Keep your original CSS here */
 
+/* ======================
+MOBILE
+====================== */
 @media (max-width: 900px) {
   .menu-btn {
     display: block;
@@ -251,12 +239,11 @@ STATS, TEAM, GLOBAL, NEWSLETTER
   }
 
   .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 
   .site-header h1 {
     font-size: 1.4rem;
-    margin-bottom: 10px;
   }
-                              }
+  }
