@@ -30,7 +30,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* ✅ SMOOTH ANCHOR SCROLLING */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,15 +40,11 @@ body {
   line-height: 1.7;
 }
 
-/* Offset anchor targets (important) */
 section,
 [id] {
   scroll-margin-top: 90px;
 }
 
-/* ======================
-   GLOBAL ELEMENTS
-====================== */
 img {
   width: 100%;
   display: block;
@@ -84,7 +80,7 @@ button {
 }
 
 /* ======================
-   SIDEBAR (PROFESSIONAL)
+   SIDEBAR
 ====================== */
 .sidebar {
   position: fixed;
@@ -95,21 +91,20 @@ button {
   display: flex;
   flex-direction: column;
   padding: 28px 20px;
-  overflow-y: auto; /* ✅ SCROLLABLE */
+  overflow-y: auto;
   transition: transform 0.35s ease;
   z-index: 3000;
 }
 
-/* Scrollbar */
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
+
 .sidebar::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 10px;
 }
 
-/* Sidebar Header */
 .sidebar h2 {
   text-align: center;
   font-size: 1.35rem;
@@ -117,7 +112,6 @@ button {
   color: var(--primary-light);
 }
 
-/* Navigation */
 .sidebar nav {
   display: flex;
   flex-direction: column;
@@ -141,9 +135,6 @@ button {
   transform: translateX(4px);
 }
 
-/* ======================
-   SOCIAL ICONS
-====================== */
 .socials {
   margin-top: auto;
   display: flex;
@@ -164,9 +155,6 @@ button {
   transform: translateY(-3px);
 }
 
-/* ======================
-   OVERLAY
-====================== */
 .overlay {
   position: fixed;
   inset: 0;
@@ -182,9 +170,6 @@ button {
   visibility: visible;
 }
 
-/* ======================
-   MAIN LAYOUT
-====================== */
 main {
   margin-left: 270px;
   padding: 45px;
@@ -215,6 +200,35 @@ footer {
 .dashboard-header h1 {
   font-size: 2.4rem;
   margin-bottom: 10px;
+}
+
+/* ======================
+   STICKY HEADER WITH LOGO
+====================== */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.sticky-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sticky-header .header-logo img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+}
+
+.sticky-header.scrolled .header-logo img {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* ======================
@@ -348,5 +362,15 @@ footer {
   footer {
     margin-left: 0;
     padding: 30px 22px;
+  }
+
+  .sticky-header .header-content {
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .sticky-header .header-logo img {
+    width: 100px;
   }
 }
