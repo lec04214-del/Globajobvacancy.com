@@ -2,118 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>GlobaJob Vacancy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | My Website</title>
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="index.css">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-  <button class="menu-btn">&#9776;</button>
+<!-- STICKY HEADER WITH LOGO -->
+<header class="site-header">
+  <h1>Global Jobs Without Borders</h1>
+  <img src="https://images.unsplash.com/photo-1603415526960-f92354c62a54" class="logo" alt="Company Logo">
+</header>
 
-  <aside class="sidebar">
-    <h2>Dashboard</h2>
-    <nav>
-      <a href="#stats">Stats</a>
-      <a href="#global">Global</a>
-      <a href="#team">Team</a>
-      <a href="#newsletter">Newsletter</a>
-    </nav>
-    <div class="socials">
-      <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
-      <a href="#"><img src="icon-linkedin.svg" alt="LinkedIn"></a>
+<!-- MENU BUTTON -->
+<button id="menuBtn" class="menu-btn">☰</button>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay"></div>
+
+<!-- SIDEBAR -->
+<aside id="sidebar" class="sidebar">
+  <h2>GlobaJob</h2>
+  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" class="sidebar-img" alt="Jobs">
+  <nav>
+    <a href="#">🏠 Home</a>
+    <a href="partners.html">🤝 Partnership</a>
+    <a href="jobs.html">💼 Jobs</a>
+    <a href="payment.html">📄 Payment</a>
+    <a href="booking.html">✍️ Booking</a>
+    <a href="about.html">ℹ️ About us</a>
+    <a href="contact.html">📞 Contact</a>
+    <a href="staff.html">🧑‍💼 Our Staffs</a>
+  </nav>
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main>
+  <section class="dashboard-header">
+    <h1>Global Jobs Without Borders</h1>
+    <p>Find verified job opportunities across countries and industries.</p>
+  </section>
+
+  <section class="stats">
+    <div class="stat-card"><h3>120+</h3><p>Active Jobs</p></div>
+    <div class="stat-card"><h3>540+</h3><p>Applications</p></div>
+    <div class="stat-card"><h3>75+</h3><p>Companies</p></div>
+    <div class="stat-card"><h3>30+</h3><p>Countries</p></div>
+  </section>
+
+  <section class="global-section">
+    <img src="https://raw.githubusercontent.com/lec04214-del/Globajobvacancy.com/main/images/istockphoto-470865674-612x612.jpg" alt="Airport scene">
+    <h2>Work Anywhere in the World</h2>
+    <p>Apply for international jobs and remote roles with relocation support.</p>
+  </section>
+
+  <section class="team-section">
+    <h2>Departments Hiring Now</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+        <h3>Engineering</h3>
+        <p>Backend, Frontend, DevOps & Software Engineers (etc)</p>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+        <h3>Design</h3>
+        <p>UI/UX designers creating user-friendly experiences.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf">
+        <h3>Marketing</h3>
+        <p>Digital marketers & growth specialists.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70">
+        <h3>Customer Support</h3>
+        <p>Support agents helping global customers.</p>
+      </div>
     </div>
-  </aside>
+  </section>
 
-  <div class="overlay"></div>
+  <section class="newsletter">
+    <h2>Get Job Alerts by Email</h2>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+</main>
 
-  <main>
+<footer>
+  <p>© 2025 GlobaJob Vacancy. All rights reserved.</p>
+</footer>
 
-    <header class="dashboard-header sticky-header">
-      <div class="header-content">
-        <div class="header-logo">
-          <img src="logo.png" alt="Logo">
-        </div>
-        <div class="header-text">
-          <h1>Welcome Back!</h1>
-          <p>Your dashboard overview is ready to explore.</p>
-          <a href="#stats" class="btn-apply">Get Started</a>
-        </div>
-      </div>
-    </header>
+<!-- SCRIPT -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
 
-    <section class="stats" id="stats">
-      <div class="stat-card">
-        <h3>120</h3>
-        <p>Users</p>
-      </div>
-      <div class="stat-card">
-        <h3>85</h3>
-        <p>Sales</p>
-      </div>
-      <div class="stat-card">
-        <h3>42</h3>
-        <p>Projects</p>
-      </div>
-      <div class="stat-card">
-        <h3>10</h3>
-        <p>Tasks</p>
-      </div>
-    </section>
+  menuBtn.addEventListener("click", () => {
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+    history.pushState({ sidebar: true }, "");
+  });
 
-    <section class="global-section" id="global">
-      <h2>Global Overview</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-    </section>
+  overlay.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 
-    <section class="team-grid" id="team">
-      <div class="team-card">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
-        <h3>John Doe</h3>
-        <p>CEO</p>
-      </div>
-      <div class="team-card">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
-        <h3>Jane Smith</h3>
-        <p>CTO</p>
-      </div>
-      <div class="team-card">
-        <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Team Member">
-        <h3>Mike Johnson</h3>
-        <p>Manager</p>
-      </div>
-    </section>
+  window.addEventListener("popstate", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 
-    <section class="newsletter" id="newsletter">
-      <h2>Subscribe to our Newsletter</h2>
-      <p>Stay updated with the latest news and updates directly in your inbox.</p>
-      <form>
-        <input type="email" placeholder="Enter your email">
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
-
-  </main>
-
-  <footer>
-    &copy; 2026 My Website. All Rights Reserved.
-  </footer>
-
-  <script>
-    const menuBtn = document.querySelector('.menu-btn');
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.overlay');
-
-    menuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-      overlay.classList.toggle('active');
-    });
-
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-  </script>
+  // SHRINK DASHBOARD HEADER ON SCROLL
+  const dashboardHeader = document.querySelector('.dashboard-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      dashboardHeader.classList.add('shrink');
+    } else {
+      dashboardHeader.classList.remove('shrink');
+    }
+  });
+</script>
 
 </body>
 </html>
