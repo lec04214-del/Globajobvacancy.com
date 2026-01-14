@@ -189,14 +189,18 @@ footer {
    HERO DASHBOARD HEADER
 ====================== */
 .dashboard-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: #fff;
-  padding: 35px 45px;
-  border-radius: var(--radius-lg);
-  margin-bottom: 55px;
-  position: relative;
-  overflow: hidden;
-  clip-path: ellipse(100% 80% at 50% 0%);
+  padding: 25px 40px;
+  border-radius: 0; /* full width */
+  margin-bottom: 40px;
+  clip-path: ellipse(100% 70% at 50% 0%);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   transition: padding 0.3s ease, box-shadow 0.3s ease, clip-path 0.3s ease;
 }
 
@@ -210,9 +214,7 @@ footer {
 
 .dashboard-header h1 {
   font-size: 2.4rem;
-  line-height: 1.2;
   font-weight: 700;
-  margin-bottom: 12px;
 }
 
 .dashboard-header p {
@@ -222,7 +224,7 @@ footer {
 }
 
 .btn-apply {
-  margin-top: 20px;
+  margin-top: 15px;
   display: inline-block;
   padding: 12px 26px;
   background: #fff;
@@ -234,23 +236,6 @@ footer {
 
 .btn-apply:hover {
   background: #e0f2fe;
-}
-
-/* ======================
-   STICKY HEADER SCROLL EFFECT
-====================== */
-.sticky-header.scrolled {
-  padding: 20px 45px;
-  clip-path: ellipse(100% 55% at 50% 0%);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
-
-.sticky-header.scrolled h1 {
-  font-size: 1.8rem;
-}
-
-.sticky-header.scrolled p {
-  font-size: 0.95rem;
 }
 
 /* ======================
@@ -392,9 +377,8 @@ footer {
   main, footer { margin-left: 0; padding: 20px; }
 
   .dashboard-header {
-    padding: 25px 20px;
-    clip-path: ellipse(100% 70% at 50% 0%);
-    border-radius: 16px;
+    padding: 20px 15px;
+    clip-path: ellipse(100% 60% at 50% 0%);
   }
 
   .dashboard-header h1 { font-size: 2rem; }
@@ -406,4 +390,4 @@ footer {
   }
 
   .sticky-header .header-logo img { width: 100px; }
-   }
+}
