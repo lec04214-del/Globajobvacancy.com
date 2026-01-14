@@ -62,7 +62,7 @@ button {
 }
 
 /* ======================
-   MENU BUTTON (MOBILE)
+   MENU BUTTON
 ====================== */
 .menu-btn {
   position: fixed;
@@ -191,19 +191,36 @@ footer {
 .dashboard-header {
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: #fff;
-  padding: 60px;
+  padding: 60px 45px;
   border-radius: var(--radius-lg);
   margin-bottom: 55px;
-  box-shadow: 0 30px 60px rgba(37,99,235,0.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .dashboard-header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.dashboard-header p {
+  font-size: 1.15rem;
+  color: #e0e7ff;
+  max-width: 500px;
 }
 
 /* ======================
-   STICKY HEADER WITH LOGO
+   STICKY HEADER
 ====================== */
 .sticky-header {
   position: sticky;
@@ -211,14 +228,8 @@ footer {
   z-index: 2000;
 }
 
-.sticky-header .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .sticky-header .header-logo img {
-  width: 120px;
+  width: 140px;
   height: auto;
   object-fit: contain;
   opacity: 0;
@@ -229,6 +240,19 @@ footer {
 .sticky-header.scrolled .header-logo img {
   opacity: 1;
   transform: scale(1);
+}
+
+.sticky-header.scrolled {
+  padding: 30px 45px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.sticky-header.scrolled h1 {
+  font-size: 2rem;
+}
+
+.sticky-header.scrolled p {
+  font-size: 1rem;
 }
 
 /* ======================
@@ -260,7 +284,7 @@ footer {
 }
 
 /* ======================
-   CONTENT SECTIONS
+   GLOBAL SECTION
 ====================== */
 .global-section {
   background: var(--card-bg);
@@ -275,7 +299,7 @@ footer {
 }
 
 /* ======================
-   TEAM
+   TEAM SECTION
 ====================== */
 .team-grid {
   display: grid;
@@ -364,13 +388,25 @@ footer {
     padding: 30px 22px;
   }
 
+  .dashboard-header {
+    padding: 40px 22px;
+    border-radius: 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .dashboard-header p {
+    font-size: 1rem;
+  }
+
   .sticky-header .header-content {
     flex-direction: column;
-    gap: 18px;
     text-align: center;
   }
 
   .sticky-header .header-logo img {
-    width: 100px;
+    width: 120px;
   }
-}
+     }
