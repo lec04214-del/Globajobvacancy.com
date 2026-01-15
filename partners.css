@@ -1,14 +1,6 @@
-/* ================= GLOBAL RESET ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
 /* ================= HEADER ================= */
 .site-header {
-  position: fixed;          /* 🔒 STABLE HEADER */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -21,41 +13,34 @@
 .header-wrapper {
   max-width: 1100px;
   margin: auto;
-  padding: 16px 12px;       /* ⬅ Reduced header height */
-  text-align: center;
+  padding: 16px 20px;      /* Slight padding */
+  display: flex;            /* ⬅ Make header flex */
+  align-items: center;
+  justify-content: space-between;  /* Logo left, nav right */
 }
 
-/* COMPANY NAME */
+/* COMPANY NAME / LOGO */
 .header-wrapper h1 {
-  font-size: 1.8rem;        /* ⬅ Smaller font */
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 4px;
   background: linear-gradient(90deg, #ffd966, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 
-/* SUBTITLE */
-.subtitle {
-  font-size: 0.9rem;        /* ⬅ Smaller subtitle */
-  opacity: 0.9;
-  margin-bottom: 12px;
-}
-
-/* ================= NAVIGATION ================= */
+/* NAVIGATION LINKS */
 .main-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;                /* ⬅ Reduced spacing */
+  display: flex;           /* ⬅ Inline links */
+  gap: 16px;
 }
 
 .main-nav a {
   color: #ffd966;
   text-decoration: none;
   font-weight: 600;
-  padding: 6px 16px;        /* ⬅ Smaller buttons */
+  padding: 6px 16px;
   border-radius: 25px;
   border: 1px solid rgba(255, 217, 102, 0.4);
   transition: all 0.3s ease;
@@ -74,78 +59,27 @@
   border-color: #ffffff;
 }
 
-/* ================= CONTENT ================= */
-.content {
-  padding: 120px 20px 50px;  /* ⬅ Less top padding for smaller header */
-  background: #f2f5fa;
-  min-height: 100vh;
-}
-
-.partners-section {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;                /* ⬅ Slightly smaller gap */
-}
-
-.partner-card {
-  background: #ffffff;
-  padding: 18px;             /* ⬅ Reduced padding */
-  border-radius: 12px;
-  border-top: 4px solid #0f4db8;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.partner-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.partner-card h3 {
-  color: #0f4db8;
-  margin-bottom: 8px;
-}
-
-.partner-card p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* ================= FOOTER ================= */
-.site-footer {
-  background: #081f4d;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px;             /* ⬅ Smaller footer */
-  font-size: 0.85rem;
-}
-
 /* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
-  .header-wrapper h1 {
-    font-size: 1.5rem;
+  .header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;   /* Stack on mobile */
+    padding: 12px 16px;
   }
 
-  .subtitle {
-    font-size: 0.8rem;
+  .header-wrapper h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
   }
 
   .main-nav {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
   }
 
   .main-nav a {
     padding: 5px 12px;
     font-size: 0.85rem;
-  }
-
-  .content {
-    padding-top: 160px;      /* ⬅ Adjust for smaller mobile header */
   }
 }
