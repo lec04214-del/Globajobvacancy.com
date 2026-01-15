@@ -51,17 +51,22 @@ img {
   padding: 0 20px;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-direction: row;
 }
 
 .site-header h1 {
   font-size: 1.4rem;
   color: var(--primary);
+  margin-left: 60px; /* space from menu button */
+  flex: 1; /* takes space between menu and logo */
+  text-align: left;
 }
 
 .site-header .logo {
   height: 50px;
   width: auto;
   object-fit: contain;
+  order: 2; /* force logo to right */
 }
 
 /* ======================
@@ -77,6 +82,7 @@ img {
   cursor: pointer;
   z-index: 1100;
   color: var(--primary);
+  order: 0;
 }
 
 /* ======================
@@ -301,6 +307,11 @@ footer {
 @media (max-width: 768px) {
   .site-header h1 {
     font-size: 1.2rem;
+    margin-left: 50px;
+  }
+
+  .site-header .logo {
+    height: 35px; /* smaller logo on mobile */
   }
 
   .dashboard-header h1 {
@@ -310,4 +321,8 @@ footer {
   .team-card img {
     height: 120px;
   }
+
+  .newsletter input {
+    width: 180px;
   }
+   }
