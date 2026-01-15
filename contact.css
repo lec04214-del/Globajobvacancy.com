@@ -8,22 +8,61 @@
 body {
   background: #f4f6f8;
   color: #333;
+  padding-top: 120px; /* Space for fixed header */
 }
 
-/* Header */
+/* ================= HEADER ================= */
 .contact-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #003366;
   color: white;
-  text-align: center;
-  padding: 40px 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.contact-header h1 {
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-text h1 {
   font-size: 32px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
-/* Container */
+.header-text p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Navigation */
+.header-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  border-color: #00b4ff;
+}
+
+/* ================= CONTAINER ================= */
 .contact-container {
   max-width: 1000px;
   margin: 40px auto;
@@ -73,11 +112,11 @@ body {
   font-size: 16px;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 .contact-footer {
   text-align: center;
   padding: 20px;
   background: #003366;
   color: white;
   margin-top: 40px;
-}
+  }
