@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 56px;
+  height: 54px;
   background: linear-gradient(135deg, #081f4d, #0f4db8);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   z-index: 1000;
@@ -30,7 +30,7 @@
 
 /* LOGO */
 .logo {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   background: linear-gradient(90deg, #ffd966, #ffffff);
   -webkit-background-clip: text;
@@ -38,35 +38,35 @@
   white-space: nowrap;
 }
 
-/* ========= NAVIGATION (FORCED INLINE) ========= */
+/* ========= NAVIGATION (ALWAYS INLINE) ========= */
 .main-nav {
-  display: flex !important;      /* 🔒 FORCE INLINE */
-  flex-direction: row !important;/* 🔒 LEFT → RIGHT */
-  gap: 14px;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
+  white-space: nowrap;
 }
 
 .main-nav a {
+  display: inline-block;
   color: #ffd966;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
-  padding: 5px 12px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 217, 102, 0.4);
-  transition: 0.3s ease;
+  padding: 4px 8px;
   white-space: nowrap;
 }
 
-.main-nav a:hover {
-  background: #ffd966;
-  color: #081f4d;
+/* DOT SEPARATORS */
+.main-nav a:not(:last-child)::after {
+  content: " ·";
+  margin-left: 6px;
+  color: #ffd966;
 }
 
 /* ========= PAGE SUBTITLE ========= */
 .page-subtitle {
-  margin-top: 70px;
-  padding: 18px 16px;
+  margin-top: 64px;
+  padding: 16px;
   text-align: center;
   background: #f2f5fa;
   font-size: 0.95rem;
@@ -98,12 +98,6 @@
   border-radius: 12px;
   border-top: 4px solid #0f4db8;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
-}
-
-.partner-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .partner-card h3 {
@@ -125,20 +119,13 @@
   font-size: 0.85rem;
 }
 
-/* ========= MOBILE (INLINE STILL) ========= */
+/* ========= MOBILE ========= */
 @media (max-width: 600px) {
   .logo {
-    font-size: 1.1rem;
-  }
-
-  /* ❌ NO COLUMN STACKING HERE */
-  .main-nav {
-    flex-direction: row !important;
-    gap: 8px;
+    font-size: 1.05rem;
   }
 
   .main-nav a {
     font-size: 0.78rem;
-    padding: 4px 10px;
   }
 }
