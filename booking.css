@@ -10,7 +10,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: #14532d; /* dark green */
+  background: linear-gradient(135deg, #0f4c81, #1e88e5);
   color: #fff;
   z-index: 1000;
   box-shadow: 0 6px 18px rgba(0,0,0,0.3);
