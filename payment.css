@@ -1,0 +1,166 @@
+/* payment.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #1e293b;
+  padding-top: 120px;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a, #1e40af);
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: #e0e7ff;
+  margin-left: 18px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* ================= PAYMENT SECTION ================= */
+.payment-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* ORDER SUMMARY */
+.summary-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.summary-box h2 {
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.summary-total {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 20px;
+  padding-top: 16px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* PAYMENT FORM */
+.payment-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.payment-box h2 {
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pay-btn:hover {
+  opacity: 0.9;
+}
+
+/* BANK TRANSFER DETAILS */
+.bank-details {
+  display: none;
+  background: #f0f4f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 30px 16px;
+  margin-top: 50px;
+  color: #64748b;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .payment-section {
+    grid-template-columns: 1fr;
+  }
+}
