@@ -16,8 +16,13 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header class="site-header">
+  <div class="header-brand">
+    <h1>Global Job Agency</h1>
+    <p>Connecting Talent to Opportunities Worldwide</p>
+  </div>
+
   <nav class="header-container">
     <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
@@ -25,14 +30,14 @@
   </nav>
 </header>
 
-<!-- BOOKING FORM -->
+<!-- ================= BOOKING FORM ================= -->
 <section class="booking-section">
   <div class="booking-container">
 
     <h1>Job Booking Form</h1>
     <p>
-      Book yourself for potential job opportunities available globally,
-      booking fee, basic: $60 express: $100
+      Book yourself for potential job opportunities available globally.
+      Booking fee: <strong>Basic $60</strong> | <strong>Express $100</strong>
     </p>
 
     <form id="bookingForm" class="booking-form">
@@ -70,6 +75,8 @@
           <label>Preferred Job Category</label>
           <select name="job_category" required>
             <option value="">-- Select Job Category --</option>
+
+            <!-- EXISTING -->
             <option>Construction</option>
             <option>Healthcare</option>
             <option>Hotel & Hospitality</option>
@@ -77,6 +84,28 @@
             <option>Factory / Manufacturing</option>
             <option>IT / Technology</option>
             <option>Logistics</option>
+
+            <!-- DOMESTIC & CARE -->
+            <option>Domestic Worker</option>
+            <option>House Help</option>
+            <option>Child Care / Nanny</option>
+            <option>Elderly Care / Caregiver</option>
+
+            <!-- OFFICE -->
+            <option>Assistant Secretary</option>
+            <option>Office Assistant</option>
+            <option>Receptionist</option>
+
+            <!-- CONSTRUCTION CATEGORIES -->
+            <option>Construction – Mason</option>
+            <option>Construction – Carpenter</option>
+            <option>Construction – Electrician</option>
+            <option>Construction – Plumber</option>
+            <option>Construction – Welder</option>
+            <option>Construction – Painter</option>
+            <option>Construction – Heavy Equipment Operator</option>
+
+            <!-- OTHER -->
             <option>Agriculture</option>
             <option>Mining</option>
             <option>Oil & Gas</option>
@@ -122,6 +151,8 @@
             <option>Vietnam</option>
             <option>Pakistan</option>
             <option>Bangladesh</option>
+            <option>Nepal</option>
+            <option>Sri Lanka</option>
           </select>
         </div>
 
@@ -181,7 +212,7 @@
 <!-- ================= JAVASCRIPT ================= -->
 <script>
   (function () {
-    emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 replace with EmailJS public key
+    emailjs.init("YOUR_PUBLIC_KEY");
   })();
 
   const bookingType = document.getElementById("bookingType");
@@ -211,13 +242,12 @@
         form.reset();
         priceDisplay.textContent = "";
       },
-      (error) => {
+      () => {
         alert("Failed to send email.");
-        console.error(error);
       }
     );
   });
 </script>
 
 </body>
-</html>
+  </html>
