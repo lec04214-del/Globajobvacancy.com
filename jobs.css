@@ -8,22 +8,62 @@
 body {
   background-color: #f4f6f8;
   color: #333;
+  padding-top: 180px; /* space for sticky header */
 }
 
-/* Header */
+/* ================= HEADER ================= */
 .page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #003366;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.page-header h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+.header-inner {
+  padding: 25px 20px 20px;
 }
 
-/* Jobs Section */
+/* Company Name */
+.company-name {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Tagline */
+.tagline {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+/* Navigation */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.header-nav a:hover {
+  background: #005fa3;
+}
+
+/* ================= JOBS SECTION ================= */
 .jobs-container {
   max-width: 1100px;
   margin: 40px auto;
@@ -73,7 +113,7 @@ body {
   background: #005fa3;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 .page-footer {
   text-align: center;
   padding: 20px;
