@@ -5,22 +5,37 @@
   <title>Job Booking Form | Global Job Agency</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="booking.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
 
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="header-container">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<!-- BOOKING FORM -->
 <section class="booking-section">
   <div class="booking-container">
 
     <h1>Job Booking Form</h1>
-    <p>Book yourself for potential job opportunities available globall,
-    booking fee, basic:$60 express:$100</p>
+    <p>
+      Book yourself for potential job opportunities available globally,
+      booking fee, basic: $60 express: $100
+    </p>
 
-    <form action="#" method="post" class="booking-form">
+    <form id="bookingForm" class="booking-form">
 
       <!-- PERSONAL DETAILS -->
       <fieldset>
@@ -28,22 +43,22 @@
 
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" placeholder="Enter full name" required>
+          <input type="text" name="full_name" required>
         </div>
 
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="Enter email" required>
+          <input type="email" name="email" required>
         </div>
 
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="+1 000 000 000" required>
+          <input type="tel" name="phone" required>
         </div>
 
         <div class="form-group">
           <label>Nationality</label>
-          <input type="text" placeholder="Your nationality" required>
+          <input type="text" name="nationality" required>
         </div>
       </fieldset>
 
@@ -53,7 +68,7 @@
 
         <div class="form-group">
           <label>Preferred Job Category</label>
-          <select required>
+          <select name="job_category" required>
             <option value="">-- Select Job Category --</option>
             <option>Construction</option>
             <option>Healthcare</option>
@@ -62,26 +77,57 @@
             <option>Factory / Manufacturing</option>
             <option>IT / Technology</option>
             <option>Logistics</option>
+            <option>Agriculture</option>
+            <option>Mining</option>
+            <option>Oil & Gas</option>
+            <option>Engineering</option>
+            <option>Education</option>
+            <option>Retail</option>
+            <option>Cleaning Services</option>
+            <option>Warehouse</option>
+            <option>Customer Service</option>
+            <option>Driving / Transport</option>
+            <option>Sales & Marketing</option>
+            <option>Call Center</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Preferred Country</label>
-          <select required>
+          <select name="preferred_country" required>
             <option value="">-- Select Country --</option>
+            <option>United States</option>
             <option>Canada</option>
             <option>United Kingdom</option>
             <option>Germany</option>
+            <option>France</option>
+            <option>Italy</option>
+            <option>Spain</option>
+            <option>Netherlands</option>
+            <option>Sweden</option>
+            <option>Norway</option>
+            <option>Denmark</option>
             <option>Saudi Arabia</option>
             <option>United Arab Emirates</option>
             <option>Qatar</option>
-            <option>Australia</option>
+            <option>China</option>
+            <option>Japan</option>
+            <option>South Korea</option>
+            <option>India</option>
+            <option>Malaysia</option>
+            <option>Singapore</option>
+            <option>Thailand</option>
+            <option>Philippines</option>
+            <option>Indonesia</option>
+            <option>Vietnam</option>
+            <option>Pakistan</option>
+            <option>Bangladesh</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Availability Date</label>
-          <input type="date" required>
+          <input type="date" name="availability_date" required>
         </div>
       </fieldset>
 
@@ -91,7 +137,7 @@
 
         <div class="form-group">
           <label>Years of Experience</label>
-          <select required>
+          <select name="experience" required>
             <option value="">-- Select --</option>
             <option>0 - 1 Year</option>
             <option>2 - 5 Years</option>
@@ -102,8 +148,24 @@
 
         <div class="form-group">
           <label>Additional Information</label>
-          <textarea rows="4" placeholder="Briefly describe your skills or experience"></textarea>
+          <textarea name="additional_info" rows="4"></textarea>
         </div>
+      </fieldset>
+
+      <!-- PAYMENT -->
+      <fieldset>
+        <legend>Payment Option</legend>
+
+        <div class="form-group">
+          <label>Select Booking Type</label>
+          <select id="bookingType" name="booking_type" required>
+            <option value="">-- Select Option --</option>
+            <option value="Basic - $60">Basic Booking ($60)</option>
+            <option value="Express - $100">Express Booking ($100)</option>
+          </select>
+        </div>
+
+        <p id="priceDisplay"></p>
       </fieldset>
 
       <!-- SUBMIT -->
@@ -115,6 +177,47 @@
 
   </div>
 </section>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  (function () {
+    emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 replace with EmailJS public key
+  })();
+
+  const bookingType = document.getElementById("bookingType");
+  const priceDisplay = document.getElementById("priceDisplay");
+  const form = document.getElementById("bookingForm");
+
+  bookingType.addEventListener("change", () => {
+    if (bookingType.value.includes("60")) {
+      priceDisplay.textContent = "Total Payable: $60 (Basic Booking)";
+    } else if (bookingType.value.includes("100")) {
+      priceDisplay.textContent = "Total Payable: $100 (Express Booking)";
+    } else {
+      priceDisplay.textContent = "";
+    }
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      this
+    ).then(
+      () => {
+        alert("Booking successful! Confirmation email sent.");
+        form.reset();
+        priceDisplay.textContent = "";
+      },
+      (error) => {
+        alert("Failed to send email.");
+        console.error(error);
+      }
+    );
+  });
+</script>
 
 </body>
 </html>
